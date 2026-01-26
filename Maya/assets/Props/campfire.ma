@@ -1,22 +1,22 @@
 //Maya ASCII 2025ff03 scene
 //Name: campfire.ma
-//Last modified: Sun, Jan 25, 2026 03:28:21 PM
+//Last modified: Mon, Jan 26, 2026 01:52:43 PM
 //Codeset: 1252
 requires maya "2025ff03";
+requires "stereoCamera" "10.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
 		 "mtoa" "5.4.2.1";
-requires "stereoCamera" "10.0";
 currentUnit -l foot -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2025";
 fileInfo "version" "2025";
 fileInfo "cutIdentifier" "202407121012-8ed02f4c99";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "C761E95A-4D12-5477-BC03-EEA772577C10";
+fileInfo "UUID" "783B91B2-4CAA-C3BD-1414-499ACF547E4E";
 createNode transform -s -n "persp";
 	rename -uid "0E675857-4C3B-B6C7-C052-12A0ED83BF76";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.22708829801583824 2.8003694372229151 1.1308256839779189 ;
+	setAttr ".t" -type "double3" 0.22708829801583685 2.8003694372228867 1.1308256839779076 ;
 	setAttr ".r" -type "double3" 1011.8616472290297 -2873.000000000096 -4.0055501149787149e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A27E6390-4998-4111-348A-2FA055B6EFBD";
@@ -25,7 +25,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr ".ncp" 0.0032808398950131233;
 	setAttr ".fcp" 328.08398950131232;
 	setAttr ".fd" 0.16404199475065617;
-	setAttr ".coi" 2.9578814372781195;
+	setAttr ".coi" 2.9578814372780897;
 	setAttr ".ow" 0.32808398950131235;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
@@ -273,7 +273,7 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr ".vt[0:165]"  0.25655714 -0.50000095 0.49458188 0.25655714 0.47172934 0.48929888
 		 0.28807026 0.47172907 0.12537329 0.30473605 0.47172907 -0.077480838 0.30473605 0.47172934 -0.42013633
 		 0.30473605 -0.50000083 -0.42013633 0.30473605 -0.40346709 -0.077480838 0.28807023 -0.40346736 0.12537329
-		 -0.081720389 -0.50000095 0.43980595 -0.081720382 0.47172949 0.43980595 -0.073770903 0.47172892 -0.19784316
+		 -0.081720389 -0.50000095 0.43980592 -0.081720382 0.47172949 0.43980592 -0.073770903 0.47172892 -0.19784316
 		 -0.068041861 0.47172949 -0.45082608 -0.068041861 -0.50000095 -0.45082608 -0.073770881 -0.37281567 -0.19784318
 		 -0.34693643 0.47172949 0.46545869 -0.34688118 -0.50000083 0.45831609 -0.34693694 -0.50000083 -0.32886958
 		 -0.34635249 0.46247232 -0.3323217 -0.28157863 0.47172949 0.45652133 -0.28157854 -0.50000095 0.45563155
@@ -752,20 +752,20 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "F971F76A-4C2A-74E4-ACCA-7A9E1229322D";
+	rename -uid "9F8C366C-4E94-4C40-BFB3-30A5B8CBE4B0";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "DFA6DC54-4BFE-EC82-A7BD-E580477B62F8";
+	rename -uid "3D820DC9-43B7-7001-3B75-35AC2CA4AB25";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "B072A6B9-44D8-4D4E-F9E0-2AB68AF7A553";
+	rename -uid "BA5BE8AB-4281-00A6-A273-C9B2A1519D12";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "D3F75DF8-4EA7-A571-0815-3E97567F98EB";
+	rename -uid "EE76E6AF-47DF-8DE1-6195-229D096FD435";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "4151DC8B-4A66-88F7-60AF-A0B125C77256";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "A0DAEFB5-4B55-4030-B6B4-85B3DD66D5CE";
+	rename -uid "8EF63705-42F8-35FF-C1CE-CB9ADAC7A959";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "F031791E-48B9-D13D-5507-148EAFD102F8";
 	setAttr ".g" yes;
@@ -933,7 +933,6 @@ select -ne :initialParticleSE;
 	setAttr -cb on ".fo";
 	setAttr -cb on ".epo";
 	setAttr -k on ".ro" yes;
-select -ne :initialMaterialInfo;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr -av -k on ".cch";
